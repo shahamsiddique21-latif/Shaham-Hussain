@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manzoor The Knight: The Untold Story - Official Website</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #080a0f;
+      --bg-card: #0d121c;
+      --bg-card-hover: #141c2c;
+      --gold-primary: #d4af37;
+      --gold-glow: #f3e5ab;
+      --emerald: #10b981;
+      --ruby: #ef4444;
+      --text-bright: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(212, 175, 55, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-bright);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-cinzel {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.05em;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff3c4 0%, #d4af37 50%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 10, 15, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2.5rem;
+    }
+
+    .nav-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--gold-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-primary);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Sections Container */
+    section {
+      padding: 6rem 2.5rem 3rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-badge {
+      font-size: 0.85rem;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* 01. HOME */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 8rem;
+    }
+
+    .hero-title {
+      font-size: 3.6rem;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+      color: #000;
+      border: none;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-bright);
+      border: 1px solid var(--border-color);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.8rem;
+      text-align: left;
+    }
+
+    /* 02. THE FILM */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      margin-bottom: 2.5rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .film-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .stat-val {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+    }
+
+    /* 03. STORY */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .chapter-card {
+      background: var(--bg-card);
+      border-left: 4px solid var(--gold-primary);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* 04 & 05. CHARACTERS & PROFILES */
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .char-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .char-img {
+      width: 100%;
+      height: 220px;
+      background-color: #1a2332;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: var(--gold-primary);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .char-info {
+      padding: 1.5rem;
+    }
+
+    /* 06. STORYBOARD */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .scene-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1rem;
+    }
+
+    /* 07. EXPRESSIONS GALLERY */
+    .expr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .expr-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* 08. PRODUCTION PROCESS */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .step-num {
+      background: var(--gold-primary);
+      color: #000;
+      font-weight: 700;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    /* 09. CHALLENGES & SOLUTIONS */
+    .cs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cs-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.8rem;
+      border-radius: 8px;
+    }
+
+    /* 10. CREDITS */
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .credit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="nav-logo">
+      <i class="fa-solid fa-shield-halved"></i> MANZOOR
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">01. Home</a></li>
+      <li><a href="#film">02. Film</a></li>
+      <li><a href="#story">03. Story</a></li>
+      <li><a href="#characters">04. Characters</a></li>
+      <li><a href="#profiles">05. Profiles</a></li>
+      <li><a href="#storyboard">06. Storyboard</a></li>
+      <li><a href="#expressions">07. Gallery</a></li>
+      <li><a href="#production">08. Process</a></li>
+      <li><a href="#challenges">09. Challenges</a></li>
+      <li><a href="#credits">10. Credits</a></li>
+    </ul>
+  </nav>
+
+  <!-- 01. HOME SECTION -->
+  <section id="home">
+    <span class="section-badge">AI Animated Short Film</span>
+    <h1 class="hero-title gold-gradient-text">MANZOOR THE KNIGHT<br>THE UNTOLD STORY</h1>
+    <p class="hero-subtitle">
+      From a lost child to an invincible knight of the Realm. Reunited with his friend Shaham and brother Mudassir to defeat the rebel bandit Suleiman Khan.
+    </p>
+    <div class="btn-group">
+      <a href="#film" class="btn btn-primary"><i class="fa-solid fa-play"></i> Watch Film</a>
+      <a href="#story" class="btn btn-secondary"><i class="fa-solid fa-scroll"></i> Explore Story</a>
+    </div>
+
+    <div class="featured-grid">
+      <div class="feature-card">
+        <i class="fa-solid fa-shield-halved" style="color:var(--gold-primary); font-size:1.8rem; margin-bottom:0.8rem;"></i>
+        <h3>Commander Manzoor</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.4rem;">The legendary knight dispatched by the Emperor with 45 elite soldiers.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-user-group" style="color:var(--gold-primary); font-size:1.8rem; margin-bottom:0.8rem;"></i>
+        <h3>Friendship with Shaham</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.4rem;">Childhood friend Shaham helps Manzoor locate his lost family.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-city" style="color:var(--gold-primary); font-size:1.8rem; margin-bottom:0.8rem;"></i>
+        <h3>Vestro & Rectos Air</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.4rem;">Journeying through historic cities to restore peace to the realm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. THE FILM SECTION -->
+  <section id="film">
+    <div class="section-header">
+      <span class="section-badge">02. Cinema</span>
+      <h2 class="section-title gold-gradient-text">The Film</h2>
+      <p class="section-desc">Watch the complete short film directly below.</p>
+    </div>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/s9zuUsDdY04?rel=0" title="Manzoor The Knight" allowfullscreen></iframe>
+    </div>
+
+    <div class="film-stats">
+      <div class="stat-box">
+        <div class="stat-val">11:07</div>
+        <div style="color:var(--text-muted); font-size:0.85rem;">Duration</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">Islamic-Stories</div>
+        <div style="color:var(--text-muted); font-size:0.85rem;">Channel</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">45 Knights</div>
+        <div style="color:var(--text-muted); font-size:0.85rem;">Battalion</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">Hindi / Urdu</div>
+        <div style="color:var(--text-muted); font-size:0.85rem;">Language</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. STORY SECTION -->
+  <section id="story">
+    <div class="section-header">
+      <span class="section-badge">03. Narrative</span>
+      <h2 class="section-title gold-gradient-text">Story & 6 Chapters</h2>
+    </div>
+
+    <div class="chapters-grid">
+      <div class="chapter-card">
+        <span style="color:var(--gold-primary); font-weight:700; font-size:0.85rem;">CHAPTER 01</span>
+        <h4 style="margin-top:0.3rem;">Childhood Separation</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.4rem;">Manzoor gets lost from his parents as a young boy and grows up to become an undefeated commander.</p>
+      </div>
+      <div class="chapter-card">
+        <span style="color:var(--gold-primary); font-weight:700; font-size:0.85rem;">CHAPTER 02</span>
+        <h4 style="margin-top:0.3rem;">The Emperor's Mission</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.4rem;">The King commands Manzoor to take 45 soldiers and hunt down the scar-faced rebel Suleiman Khan.</p>
+      </div>
+      <div class="chapter-card">
+        <span style="color:var(--gold-primary); font-weight:700; font-size:0.85rem;">CHAPTER 03</span>
+        <h4 style="margin-top:0.3rem;">Night Attack & Faith</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.4rem;">Rival bandits ambush the camp, but Manzoor unites his troops with faith and prevails.</p>
+      </div>
+      <div class="chapter-card">
+        <span style="color:var(--gold-primary); font-weight:700; font-size:0.85rem;">CHAPTER 04</span>
+        <h4 style="margin-top:0.3rem;">Recovery in Vestro</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.4rem;">Injured in battle, Manzoor is brought to Vestro city where he receives urgent medical care.</p>
+      </div>
+      <div class="chapter-card">
+        <span style="color:var(--gold-primary); font-weight:700; font-size:0.85rem;">CHAPTER 05</span>
+        <h4 style="margin-top:0.3rem;">Reunion with Shaham & Mudassir</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.4rem;">Manzoor meets his childhood friend Shaham and reunites with his younger brother Mudassir at the blacksmith forge.</p>
+      </div>
+      <div class="chapter-card">
+        <span style="color:var(--gold-primary); font-weight:700; font-size:0.85rem;">CHAPTER 06</span>
+        <h4 style="margin-top:0.3rem;">March to Rectos Air</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.4rem;">Discovering Suleiman Khan is raiding Rectos Air village where his parents reside, Manzoor rides to save them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. CHARACTERS SECTION -->
+  <section id="characters">
+    <div class="section-header">
+      <span class="section-badge">04. Key Figures</span>
+      <h2 class="section-title gold-gradient-text">Characters</h2>
+    </div>
+
+    <div class="char-grid">
+      <div class="char-card">
+        <div class="char-img"><i class="fa-solid fa-user-shield"></i></div>
+        <div class="char-info">
+          <span style="color:var(--gold-primary); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Hero</span>
+          <h3>Commander Manzoor</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.5rem;">Fearless warrior knight leading 45 imperial soldiers to capture Suleiman Khan.</p>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="char-img"><i class="fa-solid fa-handshake"></i></div>
+        <div class="char-info">
+          <span style="color:var(--gold-primary); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Childhood Friend</span>
+          <h3>Shaham</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.5rem;">Manzoor's trusted childhood companion who brings news of his family and brother Mudassir.</p>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="char-img"><i class="fa-solid fa-hammer"></i></div>
+        <div class="char-info">
+          <span style="color:var(--gold-primary); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Brother</span>
+          <h3>Mudassir</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.5rem;">Manzoor's younger brother, working diligently as a blacksmith in Vestro city.</p>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="char-img"><i class="fa-solid fa-mask"></i></div>
+        <div class="char-info">
+          <span style="color:var(--ruby); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Rebel Outlaw</span>
+          <h3>Suleiman Khan</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-top:0.5rem;">Dangerous bandit chief identifiable by the distinct mark scar on his face.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. CHARACTER PROFILES SECTION -->
+  <section id="profiles">
+    <div class="section-header">
+      <span class="section-badge">05. Lore Dossier</span>
+      <h2 class="section-title gold-gradient-text">Character Profiles</h2>
+    </div>
+
+    <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:2rem; border-radius:12px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
+      <div>
+        <h3 style="color:var(--gold-primary); margin-bottom:1rem;">Commander Manzoor</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;"><strong>Biography:</strong> Separated from his parents as a child, he dedicated his life to training and rose to become the King's premier knight commander.</p>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.8rem;"><strong>Appearance:</strong> Steel chainmail, emerald green cloak, royal crest helm.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--gold-primary); margin-bottom:1rem;">Shaham & Mudassir</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;"><strong>Shaham:</strong> Loyal ally who recognized Manzoor after years and revealed Mudassir's presence in Vestro.</p>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.8rem;"><strong>Mudassir:</strong> Manzoor's younger brother who works as a blacksmith to provide for their aging parents.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. STORYBOARD SECTION -->
+  <section id="storyboard">
+    <div class="section-header">
+      <span class="section-badge">06. Visual Layout</span>
+      <h2 class="section-title gold-gradient-text">Storyboard</h2>
+      <p class="section-desc">150 storyboard scenes tracking the narrative flow of the film.</p>
+    </div>
+
+    <div class="scene-grid" id="storyboardGrid"></div>
+  </section>
+
+  <!-- 07. EXPRESSIONS GALLERY SECTION -->
+  <section id="expressions">
+    <div class="section-header">
+      <span class="section-badge">07. Character Expressions</span>
+      <h2 class="section-title gold-gradient-text">Expressions Gallery</h2>
+      <p class="section-desc">Capturing key emotional expressions rendered across character models.</p>
+    </div>
+
+    <div class="expr-grid">
+      <div class="expr-card">
+        <i class="fa-solid fa-face-angry" style="font-size:2.5rem; color:var(--ruby); margin-bottom:0.8rem;"></i>
+        <h4>Manzoor - Determination</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.4rem;">Fierce focus during night battle ambush.</p>
+      </div>
+      <div class="expr-card">
+        <i class="fa-solid fa-face-sad-tear" style="font-size:2.5rem; color:var(--gold-primary); margin-bottom:0.8rem;"></i>
+        <h4>Shaham & Manzoor - Reunion</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.4rem;">Tears of joy upon recognizing childhood companion Shaham.</p>
+      </div>
+      <div class="expr-card">
+        <i class="fa-solid fa-face-grin-stars" style="font-size:2.5rem; color:var(--emerald); margin-bottom:0.8rem;"></i>
+        <h4>Mudassir - Amazement</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.4rem;">Shock and relief upon seeing his knight brother alive.</p>
+      </div>
+      <div class="expr-card">
+        <i class="fa-solid fa-face-flushed" style="font-size:2.5rem; color:var(--gold-primary); margin-bottom:0.8rem;"></i>
+        <h4>Suleiman Khan - Cunning</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.4rem;">Smirk when planning raids across nearby villages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. PRODUCTION PROCESS SECTION -->
+  <section id="production">
+    <div class="section-header">
+      <span class="section-badge">08. Behind the Scenes</span>
+      <h2 class="section-title gold-gradient-text">Production Process</h2>
+      <p class="section-desc">From initial script writing to final AI visual rendering.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <h4>Script & World-building</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Drafting Urdu narrative dialogues and establishing historical Islamic knight lore.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <h4>AI Character Design</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Generating consistent character models for Manzoor, Shaham, Mudassir, and Suleiman.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <h4>Animation & Motion</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Rendering 150 visual scenes with dynamic camera pans and sword action.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <h4>Voiceover & Sound</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.5rem;">Voice dubbing, orchestral battle score, and ambient sound design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09. CHALLENGES & SOLUTIONS SECTION -->
+  <section id="challenges">
+    <div class="section-header">
+      <span class="section-badge">09. Technical Insights</span>
+      <h2 class="section-title gold-gradient-text">Challenges & Solutions</h2>
+    </div>
+
+    <div class="cs-grid">
+      <div class="cs-card">
+        <h4 style="color:var(--ruby); margin-bottom:0.5rem;"><i class="fa-solid fa-triangle-exclamation"></i> Facial Consistency</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem;"><strong>Challenge:</strong> Maintaining character face features for Manzoor and Shaham across different scenes.<br><br><strong>Solution:</strong> Used custom prompt embeddings and fixed image-to-image reference controls.</p>
+      </div>
+      <div class="cs-card">
+        <h4 style="color:var(--emerald); margin-bottom:0.5rem;"><i class="fa-solid fa-circle-check"></i> Action Fluidity</h4>
+        <p style="color:var(--text-muted); font-size:0.88rem;"><strong>Challenge:</strong> Simulating fast-paced horse riding and sword combat.<br><br><strong>Solution:</strong> Frame interpolation and multi-layer motion brush rendering.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CREDITS SECTION -->
+  <section id="credits">
+    <div class="section-header">
+      <span class="section-badge">10. Acknowledgments</span>
+      <h2 class="section-title gold-gradient-text">Credits</h2>
+      <p class="section-desc">The creative team behind "Manzoor The Knight: The Untold Story".</p>
+    </div>
+
+    <div class="credits-grid">
+      <div class="credit-card">
+        <h4 style="color:var(--gold-primary);">Islamic-Stories</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem;">Channel Owner & Executive Producer</p>
+      </div>
+      <div class="credit-card">
+        <h4 style="color:var(--gold-primary);">AI Animation Team</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem;">Prompt Engineering & Scene Generation</p>
+      </div>
+      <div class="credit-card">
+        <h4 style="color:var(--gold-primary);">Audio & Dubbing</h4>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem;">Urdu Voiceover & Sound Design</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>Manzoor The Knight: The Untold Story</strong>. Official Showcase Website.</p>
+  </footer>
+
+  <script>
+    // Populate Storyboard Cards
+    const container = document.getElementById('storyboardGrid');
+    const scenes = [
+      "Young Manzoor wandering alone calling for parents",
+      "Manzoor growing into a warrior knight of the realm",
+      "Emperor assigning Manzoor 45 knights to find Suleiman Khan",
+      "Suleiman Khan planning ambushes in dark forest camp",
+      "Night battle attack on Manzoor's army encampment",
+      "Manzoor rallying soldiers with shouts of faith",
+      "Wounded Manzoor being transported into Vestro City",
+      "Doctor treating Manzoor inside Vestro infirmary",
+      "Shaham discovering Manzoor and weeping tears of joy",
+      "Shaham sharing news about family and Mudassir",
+      "Mudassir forging iron inside Vestro blacksmith shop",
+      "Manzoor leading 45 knights riding to Rectos Air"
+    ];
+
+    scenes.forEach((desc, idx) => {
+      const div = document.createElement('div');
+      div.className = 'scene-card';
+      div.innerHTML = `
+        <span style="background:var(--gold-primary); color:#000; font-weight:700; padding:0.2rem 0.4rem; border-radius:3px; font-size:0.75rem;">Scene ${String(idx + 1).padStart(3, '0')}</span>
+        <div style="background:#131b28; height:100px; border-radius:4px; display:flex; align-items:center; justify-content:center; margin:0.6rem 0; border:1px dashed var(--border-color);">
+          <i class="fa-regular fa-image" style="color:var(--gold-primary); font-size:1.4rem;"></i>
+        </div>
+        <p style="font-size:0.8rem; color:var(--text-muted);">${desc}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
